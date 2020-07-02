@@ -66,13 +66,17 @@ async function join(newUser) {
   const guildName = newUser.guild.name;
 
   if(newUser.guild.systemChannel){
-    for (let [key, value] of joinMessages) {
-      if (guildId === key) {
-        let message = value
-          .replace('%USERNAME%', newUser)
-          .replace('%SERVERNAME%', guildName);
+    if(joinMessages.has(guildId)){
+      for (let [key, value] of joinMessages) {
+        if (guildId === key) {
+          let message = value
+            .replace('%USERNAME%', newUser)
+            .replace('%SERVERNAME%', guildName);
           newUser.guild.systemChannel.send(message);
+        }
       }
+    }else{
+      newUser.guild.systemChannel.send(`${newUser}さんいらっしゃい。ここは、${guildName} です。`)
     }
   }
 }
