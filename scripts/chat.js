@@ -59,7 +59,7 @@ async function cmd(msg) {
 }
 
 async function join(newUser) {
-  //部屋に入ったユーザーへの加入メッセージを案内 %USERNAME% はユーザー名に、%ROOMNAME% はサーバ名に置換
+  //部屋に入ったユーザーへの加入メッセージを案内 %USERNAME% はユーザー名に、%SERVERNAME% はサーバ名に置換
 
   //チャンネルのIDからチャンネル名を取得
   const guildId = newUser.guild.id;
