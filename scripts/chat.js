@@ -1,7 +1,6 @@
 'use strict';
 
-const {Client, RichEmbed} = require('discord.js');
-const client = new Client();
+const Client = require('discord.js');
 const fs = require("fs");
 console.log("module is loaded!")
 const joinMessagesFileName = './join_messages.json';
