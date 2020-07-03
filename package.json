@@ -1,9 +1,9 @@
 {
-  "name": "join-leave-hubot",
-  "version": "1.0.0",
+  "name": "welcome-bot",
+  "version": "1.1",
   "private": true,
   "author": "0505Keitan <contact@0505Keitan.com>",
-  "description": "Channel join and leave message BOT.",
+  "description": "Server join message BOT.",
   "dependencies": {
     "discord.js": "^12.2.0",
     "dotenv": "^8.2.0",
