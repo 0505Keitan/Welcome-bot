@@ -53,7 +53,16 @@ async function cmd(msg) {
   }
 
   if(msg.content.match(/^w\? help/i)){
-    msg.channel.send(`Welcome-botの使い方に関しては <https://0505keitan.com/docs/welcome-bot> を参照してください。`);
+    const message = new Client.MessageEmbed()
+      .setColor('#0099ff')
+      .setTitle('Welcome bot')
+      .setURL('https://0505keitan.com/docs/welcome-bot')
+      .setDescription('加入メッセージ送信BOTの使い方')
+      .addField('加入メッセージ登録 [MESSAGE]', 'サーバ加入時に送信させたいメッセージを登録/変更します。改行する場合は「\\n」を入力してください。')
+      .addField('加入メッセージ削除', '変更した加入メッセージを削除します。')
+      .setTimestamp()
+      .setFooter('Made by 0505Keitan', 'https://1.bp.blogspot.com/-J3cnqcY8-6I/WMfCZGUDCEI/AAAAAAABCnY/y3vxhMqttW0u7aBiUhjBqyCl4_ifs_2EgCLcB/s400/yobidashi_bell1.png');
+    msg.channel.send(message);
   }
 }
 
