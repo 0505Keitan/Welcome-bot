@@ -15,7 +15,7 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
   client.user.setPresence({
     activity: {
-      name: `β1 | w? help`
+      name: `β1.1 | w? help`
     },
     status: 'online'
   });
