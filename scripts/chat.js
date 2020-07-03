@@ -52,6 +52,23 @@ async function cmd(msg) {
     msg.channel.send(`加入メッセージを削除しました！`);
   }
 
+  if(msg.content.match(/^加入メッセージ確認/i)){
+    if(!msg.guild.systemChannel) msg.channel.send(':warning:このサーバではシステムのメッセージチャンネルが有効になっていません:warning:\n:warning:有効になってない場合、新規ユーザが加入してもメッセージが投稿されません:warning:');
+    const guildId = msg.guild.id;
+    if(msg.guild.systemChannel){
+      if(joinMessages.has(guildId)){
+        for (let [key, value] of joinMessages) {
+          if (guildId === key) {
+            let message = value.replace('\\n', '\n');
+            msg.channel.send(message);
+          }
+        }
+      }else{
+        msg.channel.send(`%USERNAME%さんいらっしゃい。ここは、%SERVERNAME% です。`)
+      }
+    }
+  }
+
   if(msg.content.match(/^w\? help/i)){
     const message = new Client.MessageEmbed()
       .setColor('#0099ff')
