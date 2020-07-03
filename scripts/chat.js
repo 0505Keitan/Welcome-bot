@@ -79,7 +79,8 @@ async function join(newUser) {
         if (guildId === key) {
           let message = value
             .replace('%USERNAME%', newUser)
-            .replace('%SERVERNAME%', guildName);
+            .replace('%SERVERNAME%', guildName)
+            .replace('\\n', '\n');
           newUser.guild.systemChannel.send(message);
         }
       }
